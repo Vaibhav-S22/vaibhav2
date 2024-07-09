@@ -1,0 +1,126 @@
+/* Basic setup for the scene */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #87CEEB;
+    background-image: url(image\ 1.png);
+    background-size: cover;
+    background-image: url(image\ 1.png);
+}
+.tree {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 200px;
+    /* background: brown;
+    border-radius: 10px; */
+}
+
+.tree::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    /* background: green;
+    border-radius: 50%; */
+}
+
+.girl-bicycle {
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+    width: 500px;
+    height: 400px;
+    /* background-color: transparent; */
+    background: url('girl.png') no-repeat center center / contain;
+    animation: rideBicycle 10s linear infinite;
+    transform: scaleX(-1) scaleY(1);
+    
+}
+@keyframes rideBicycle {
+    0% { left: 100px; }
+    100% { left: 200%; }
+}
+
+.leaves {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    
+}
+
+.leaf {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('leaf_04.png') no-repeat center center / contain;
+    animation: fallLeaf 5s linear infinite;
+    opacity: 0;
+}
+
+#container{
+    background-color: rgba(255, 255, 255, 0.652);
+    height: 350px;
+    width: 350px;
+    /* margin-left: -300px; */
+}
+input{
+    line-height: 30px;
+    text-align: center;
+    margin-left: 20px;
+    width: 300px;
+    border-color: aliceblue;
+    border-radius: 10px;
+}
+button{
+    line-height: 30px;
+    background-color: rgb(143, 3, 3);
+    margin-left: 120px;
+    width: 100px;
+    border-bottom: red;
+    border-radius: 5px;
+    color: white;
+ font-size: 20px;
+ font-style: italic;
+}
+h2{
+    text-align: center;
+    color: rgba(218, 3, 3, 0.764);
+}
+p{
+    margin-left: 8px;
+}
+#signup{
+    margin-left: 280px;
+    margin-top: -32px;
+}
+@keyframes fallLeaf {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Styling each leaf with different delay */
+.leaf:nth-child(1) { left: 10%; animation-delay: 0s; }
+.leaf:nth-child(2) { left: 20%; animation-delay: 1s; }
+.leaf:nth-child(3) { left: 30%; animation-delay: 2s; }
+/* Add more leaves with different delays as needed */
